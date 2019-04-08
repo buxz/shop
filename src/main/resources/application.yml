@@ -1,0 +1,26 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    name: mybatis_test
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      filters: stat
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/51mall?characterEncoding=utf8&serverTimezone=UTC
+      username: root
+      password: 6da76fa14f
+# jsp 配置
+  mvc:
+    view:
+      prefix: /WEB-INF/jsp/
+      suffix: .jsp
+mybatis:
+  # 映射文件所在路径
+  mapper-locations: classpath:mapping/*.xml
+
+# 打印sql
+logging:
+  level:
+    com.bxz.shop.mapper : debug
